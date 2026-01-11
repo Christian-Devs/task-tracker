@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
+    //function to create and store a task linked to a project
     public function store(Request $request, Project $project){
         $data = $request->validate([
             'title' => 'required|string|max:255',
@@ -23,6 +24,7 @@ class TaskController extends Controller
         );
     }
 
+    //function to update the status of a task
     public function updateStatus(Request $request, Task $task)
     {
         $data = $request->validate([
